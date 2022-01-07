@@ -76,7 +76,8 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
       beginning_node = ListNode()
       tmp_node = beginning_node
       addition = 0
-
+      
+      # 当l1 l2全部被遍历完，且进位符不为1的情况下，停止遍历
       while l1 or l2 or addition:
           num1 = l1.val if l1 else 0
           num2 = l2.val if l2 else 0
@@ -87,7 +88,6 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
 
           l1 = l1.next if l1 else None
           l2 = l2.next if l2 else None
-
           tmp_node = tmp_node.next
 
       return beginning_node.next
